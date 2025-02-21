@@ -1,2 +1,19 @@
+--restart unless-stopped --name "vjn-cribl-stream-worker" -h "wkr-icr-local103ibe-001" cribl/cribl:latest
+
+
 services:
-  
+  cribl-worker:
+    image: cribl/cribl:latest
+    container_name: {CONTAINER_NAME}
+    hostname: {HOSTNAME}
+    restart: unless_stopped
+    env_file:
+      - ".env"
+    ports:
+      - "9000:9000"
+      - "514:514"
+      - "6514:6514"
+      - "5986:5986"
+      
+    volumes:
+      - "./cribl-config:/opt/cribl/config-volume"
