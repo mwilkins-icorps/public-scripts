@@ -1,1 +1,0 @@
-docker run -d -e "CRIBL_DIST_MASTER_URL=tls://YtqiWMxBklxNW5HN8eV9JxwKl5uuGcUR@icr-clever-swanson-38afsyp.cribl.cloud:4200?group=icr-local103ibe" -e "CRIBL_DIST_MODE=worker" -p 9000:9000/tcp -p 514:514/tcp -p 514:514/udp -p 6514:6514/tcp -p 5986:5986/tcp --restart unless-stopped --name "vjn-cribl-stream-worker" -h "wkr-icr-local103ibe-001" cribl/cribl:latest
