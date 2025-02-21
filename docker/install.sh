@@ -30,3 +30,5 @@ newgrp docker
 # Enable Service
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
+
+exit
