@@ -1,14 +1,12 @@
 services:
   cribl-worker:
     image: cribl/cribl:latest
-    container_name: {CONTAINER_NAME}
-    hostname: {HOSTNAME}
+    container_name: vjn-cribl-stream-worker
+    hostname: wkr-icr-local103ibe-001
     restart: unless_stopped
-    env_file:
-      - ".env"
     environment:
-      CRIBL_DIST_MASTER_URL: {CRIBL_DIST_MASTER_URL}
-      CRIBL_DIST_MODE: {CRIBL_DIST_MODE}
+      - CRIBL_DIST_MASTER_URL: tls://YtqiWMxBklxNW5HN8eV9JxwKl5uuGcUR@icr-clever-swanson-38afsyp.cribl.cloud:4200?group=icr-local103ibe
+      - CRIBL_DIST_MODE: work
     ports:
       - "9000:9000"
       - "514:514"
